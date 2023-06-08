@@ -1,0 +1,18 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  /* Ajusta la altura según tus necesidades */
+  background: linear-gradient(to bottom, #23272f 40%, #F6F1F1 40%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  color: white;
+}
