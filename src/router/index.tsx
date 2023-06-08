@@ -14,6 +14,12 @@ export const RootRouter = () => {
            }
         },
         {
+            path: "*",
+           loader:async ()=>{
+            return redirect("client/list")
+           }
+        },
+        {
             path: "client/list",
             Component: ListClient
         },
