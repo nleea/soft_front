@@ -1,23 +1,11 @@
-import { useCallback, useState } from "react";
 import { instance } from "../instance";
 
-interface ErrorResponse {
-    data: any;
-    status: number;
-}
-
-interface ErrorRequest {
-    request: any;
-}
-
-type interfaceError = ErrorResponse | ErrorRequest;
 
 const PutFetch = <C extends any>() => {
-    const [data, setData] = useState<C>();
-    const [error, setError] = useState<interfaceError>();
+
 
     const fetch = async (url: string, body: any) => {
-        let response = null;
+        let response: C = {} as C;
         let response_error = null;
         try {
             const data = await (await instance.put(url, body)).data
@@ -27,10 +15,10 @@ const PutFetch = <C extends any>() => {
             console.log("Error", error);
         }
 
-        return {response,response_error}
+        return { response, response_error }
     };
 
-    return { error, fetch, data };
+    return { fetch };
 };
 
 export { PutFetch };
